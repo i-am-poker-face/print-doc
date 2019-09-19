@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="sources/scss/style.css">
+    <title>Поверка</title>
+</head>
+<body>
+<div class="container">
+
+    <form>
+        <h1>Подготовка свидетельства о поверке</h1>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="number">Свидетельство:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">№</div>
+                                </div>
+                                <input id="number" name="number" placeholder="Номер/Год" type="text" required="required" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="date">Дата поверки:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                </div>
+                                <input id="date" name="date" type="text" required="required" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="interval">Интервал:</label>
+                            <div>
+                                <select id="interval" name="interval" class="custom-select">
+                                    <option value="1">1 год</option>
+                                    <option value="2">2 года</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="type">Тип поверки:</label>
+                            <div>
+                                <select id="type" name="type" class="custom-select">
+                                    <option value="1">Первичная</option>
+                                    <option value="2">Периодическая</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="sign">Знак поверки:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-edit"></i>
+                                    </div>
+                                </div>
+                                <input id="sign" name="sign" placeholder="xxxxxxxxxxx" required="required" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="form-group">
+                            <label for="means-of-measurement">Средство измерений:</label>
+                            <input id="means-of-measurement" name="means-of-measurement" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="reg-id">Номер госреестра:</label>
+                            <input id="reg-id" name="reg-id" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="serial-number">Серийный номер:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">№</div>
+                                </div>
+                                <input id="serial-number" name="serial-number" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="select">Поверено:</label>
+                            <div>
+                                <select id="select" name="select" class="custom-select">
+                                    <option value="long">В полном объеме</option>
+                                    <option value="short">В сокращенном диапазоне</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="reference">С применением эталонов:</label>
+                            <input id="reference" name="reference" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="gost">В соответствии с:</label>
+                            <input id="gost" name="gost" placeholder="ГОСТ..." type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="temperature">Температура воздуха:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">t</div>
+                                </div>
+                                <input id="temperature" name="temperature" placeholder="xx" type="text" class="form-control">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">°C</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="rh">Относительная влажность:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">h</div>
+                                </div>
+                                <input id="rh" name="rh" placeholder="xx" type="text" class="form-control">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="atmosphere-pressure">Атмосферное давление:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">p</div>
+                                </div>
+                                <input id="atmosphere-pressure" name="atmosphere-pressure" placeholder="xx,x" type="text" class="form-control">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">кПа</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="address">Место проведения поверки:</label>
+                            <textarea id="address" name="address" cols="40" rows="5" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="order-num">Заявление квитанция</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">№</div>
+                                </div>
+                                <input id="order-num" name="order-num" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="order-date">от:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                </div>
+                                <input id="order-date" name="order-date" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="customer-name">Наименование владельца:</label>
+                            <input id="customer-name" name="customer-name" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="customer-inn">ИНН владельца:</label>
+                            <input id="customer-inn" name="customer-inn" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="result">Заключение</label>
+                            <div>
+                                <select id="result" name="result" class="custom-select">
+                                    <option value="1">Годен</option>
+                                    <option value="2">Не годен</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="boss">Должность руководителя:</label>
+                            <div>
+                                <select id="boss" name="boss" class="custom-select">
+                                    <option value="1">Стариков Евгений Валерьевич</option>
+                                    <option value="2">Иванов Иван Иванович</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="verification-officer">Поверитель:</label>
+                            <div>
+                                <select id="verification-officer" name="verification-officer" class="custom-select">
+                                    <option value="1">Чередников Денис Владимирович</option>
+                                    <option value="2">Иванов Иван Иванович</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button name="submit" type="submit" class="btn btn-primary">Подтвердить</button>
+        </div>
+    </form>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
