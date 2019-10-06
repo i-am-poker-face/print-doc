@@ -3,7 +3,8 @@ const routes = {
     submit: "/submit",
     createTable: "/createTable",
     getAllData: "/getFromDb",
-    getDataById: "/getDataById"
+    getDataById: "/getDataById",
+    editData: "/editData"
 };
 
 export default routes;

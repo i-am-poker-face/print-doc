@@ -9,12 +9,11 @@ const app = express();
 app.use(routes.staticAssets, express.static('static'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.set("view engine", "pug");
+app.set("view engine", "ejs");
 app.set("views", "views");
 
 app.post(routes.submit, submitHandler);
-app.post(routes.getDataById, getDataById);
-
+app.get(routes.getDataById, getDataById);
 app.get(routes.createTable, createTableHandler);
 app.get(routes.getAllData, getDataHandler);
 
