@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import {submitHandler} from "./js/sumbitHandler";
 import {createTableHandler, getDataHandler, getDataById} from "./js/db/handlers";
 import routes from "./js/routes";
-const PORT = 4000;
+const PORT = 4001;
 const app = express();
 
 app.use(routes.staticAssets, express.static('static'));
