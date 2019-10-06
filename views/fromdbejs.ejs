@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Данные с базы</title>
+</head>
+<body>
+    <h3>Номер сертификата</h3>
+    <% for(var i = 0; i < dataFromDb.length;i++) { %>
+        <p>Номер сертификата:<%= dataFromDb[i].certificateId %></p>
+        <p>Дата:<%= JSON.parse(dataFromDb[i].data).date %></p>
+        <p>Знак поверки:<%= JSON.parse(dataFromDb[i].data).sign %></p>
+        <a href="/getDataById?id=<%= dataFromDb[i].id%>"><button>Редактивровать</button></a>
+    <% } %>
+    <script src="https://code.jquery.com/jquery-2.2.4.js", integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=", crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

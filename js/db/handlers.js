@@ -25,6 +25,6 @@ export const getDataHandler = (req, res)=>{
 export const getDataById = (req, res)=>{
     let id = req.query.id;
     res.render('edit',{
-        data: data[id-1]
+        data: data[id-1]//todo сделать через helper
     });
 };
