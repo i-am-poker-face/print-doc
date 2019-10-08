@@ -8,13 +8,24 @@
     <title>Данные с базы</title>
 </head>
 <body>
-    <h3>Номер сертификата</h3>
-    <% for(var i = 0; i < dataFromDb.length;i++) { %>
-        <p>Номер сертификата:<%= dataFromDb[i].certificateId %></p>
-        <p>Дата:<%= JSON.parse(dataFromDb[i].data).date %></p>
-        <p>Знак поверки:<%= JSON.parse(dataFromDb[i].data).sign %></p>
-        <a href="/getDataById?id=<%= dataFromDb[i].id%>"><button>Редактивровать</button></a>
-    <% } %>
+    <input type="text" id="myInput" onkeyup="filterDataFunction()" placeholder="Искать по номеру сертификата..">
+    <table id="infoFromDbTable">
+        <tr class="header">
+            <th>Номер сертификата:</th>
+            <th>Дата:</th>
+            <th>Знак поверки:</th>
+            <th></th>
+        </tr>
+        <% for(var i = 0; i < dataFromDb.length;i++) { %>
+            <tr>
+                <td><%= dataFromDb[i].certificateId %></td>
+                <td><%= JSON.parse(dataFromDb[i].data).date %></td>
+                <td><%= JSON.parse(dataFromDb[i].data).sign %></td>
+                <td><a href="/getDataById?id=<%= dataFromDb[i].id%>"><button>Редактивровать</button></td>
+            </tr>
+        <% } %>
+    </table>
+
     <script src="https://code.jquery.com/jquery-2.2.4.js", integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=", crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
 </body>
