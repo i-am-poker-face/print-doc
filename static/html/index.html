@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- General CSS Files -->
+    <link rel="stylesheet" href="../modules/bootstrap-daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="../modules/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../modules/fontawesome/css/all.min.css">
 
@@ -47,7 +48,16 @@
                                         <i class="fa fa-calendar"></i>
                                     </div>
                                 </div>
-                                <input id="date" name="date" type="text" required="required" class="form-control">
+                                <input id="date" name="date" type="text" required="required" class="form-control datepicker">
+                            </div>
+                            <label for="date2">Действителен до:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                </div>
+                                <input id="date2" name="date2" type="text" required="required" class="form-control datepicker">
                             </div>
                         </div>
                     </div>
@@ -305,10 +315,21 @@
 <script src="../modules/moment.min.js"></script>
 <script src="../js/stisla.js"></script>
 
-<script src="assets/modules/select2/dist/js/select2.full.min.js"></script>
+<script src="../modules/bootstrap-daterangepicker/daterangepicker.js"></script>
 
 <script src="../js/scripts.js"></script>
 <script src="../js/custom.js"></script>
+<script>
+    $('#date').on('change', dateInterval);
+    $('#interval').on('change', dateInterval);
 
+    function dateInterval() {
+        let startDate = $('#date').val();
+        let interval = $('#interval').val();
+
+        let date = moment(startDate).add((interval * 365) - 1, 'day').format("YYYY-MM-DD");
+        $('#date2').val(date);
+    }
+</script>
 </body>
 </html>

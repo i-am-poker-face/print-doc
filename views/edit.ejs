@@ -12,7 +12,8 @@
     <!-- General CSS Files -->
     <link rel="stylesheet" href="../assets/modules/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/modules/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="assets/modules/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="..assets/modules/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="../assets/modules/bootstrap-daterangepicker/daterangepicker.css">
 
     <!-- Plugins -->
     <link rel="stylesheet" href="../assets/modules/bootstrap-social/bootstrap-social.css">
@@ -48,7 +49,16 @@
                                         <i class="fa fa-calendar"></i>
                                     </div>
                                 </div>
-                                <input id="date" name="date" type="text" required="required" class="form-control" value="<%=JSON.parse(data.data).date%>">
+                                <input id="date" name="date" type="text" required="required" class="form-control datepicker" value="<%=JSON.parse(data.data).date%>">
+                            </div>
+                            <label for="date">Действителен до:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                </div>
+                                <input id="date2" name="date2" type="text" required="required" class="form-control datepicker" value="<%=JSON.parse(data.data).date2%>">
                             </div>
                         </div>
                     </div>
@@ -319,10 +329,23 @@
 <script src="../assets/modules/moment.min.js"></script>
 <script src="../assets/js/stisla.js"></script>
 
-<script src="assets/modules/select2/dist/js/select2.full.min.js"></script>
+
+<script src="../assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="../assets/modules/select2/dist/js/select2.full.min.js"></script>
 
 <script src="../assets/js/scripts.js"></script>
 <script src="../assets/js/custom.js"></script>
+<script>
+    $('#date').on('change', dateInterval);
+    $('#interval').on('change', dateInterval);
 
+    function dateInterval() {
+        let startDate = $('#date').val();
+        let interval = $('#interval').val();
+
+        let date = moment(startDate).add((interval * 365) - 1, 'day').format("YYYY-MM-DD");
+        $('#date2').val(date);
+    }
+</script>
 </body>
 </html>
