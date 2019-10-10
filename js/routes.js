@@ -4,7 +4,10 @@ const routes = {
     createTable: "/createTable",
     getAllData: "/getFromDb",
     getDataById: "/getDataById",
-    editData: "/editData"
+    editData: "/editData",
+    setCatalog: "/setCatalog",
+    createCatalogTable: "/createCatalogTable",
+    setToCatalogForm: "/setToCatalogForm"
 };
 
 export default routes;
